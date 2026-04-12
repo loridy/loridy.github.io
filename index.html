@@ -1,77 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Homepage</title>
-     <link rel="stylesheet" href="../css/style.css">
-     <script src="https://kit.fontawesome.com/b56d5f9176.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loridy — Home</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-     <div class="profile">
-          <div class="header">
-               <div class="profile-img">
-                    <a href="./schedule.html" target="_blank"><img src="./image/profile_img.JPG" class="picture"></a>
-                    <!-- <img src="./image/profile_img.JPG" class="picture"> -->
-               </div>
-               <div class="profile-info">
-                    <h1>Loridy</h1>
-               </div>
-               <div class="profile-other">
-                    <div class="profile-school">
-                         <p>
-                              <a href="https://www.hku.hk/" target="_blank">
-                                   <i class="fa-solid fa-building-columns"></i>
-                              </a>
-                              The University of Hong Kong
-                         </p>
-                    </div>
-                    <div clas="profie-contact">
-                         <p>
-                              <a href="#">
-                                   <i class="fa-brands fa-weixin" onclick="showQr()"></i>
-                              </a>
-                              Loridy-xyz
-                         </p>
-                    </div>
-                    <div class="profile-email">
-                         <p>
-                              <a href="mailto:loridyluo@gmail.com">
-                                   <i class="fa-solid fa-envelope"></i>
-                              </a>
-                              LoridyLuo@gmail.com
-                         </p>
-                    </div>
-               </div>
-          </div>
-          <div class="content">
-               <div class="about">
-                    I'm currently a junior student pursuing a Bachelor degree at HKU.
-               </div>
-               <div class="links">
-                    <h2>More Info :</h2>
-                    <ul>
-                         <li class="github">
-                              <a href="https://github.com/Loridy" target="_blank"><i class="fa-brands fa-github"></i></a>
-                         </li>
-                         <li class="linkedin">
-                              <a href="https://www.linkedin.com/in/ruidi-luo-012ab021b" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                         </li>
-                         <li class="instagram">
-                              <a href="https://www.instagram.com/_loridy/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                         </li>
-                         <li class="zhihu">
-                              <a href="https://www.zhihu.com/people/ying-di-qwq" target="_blank"><i class="fab fa-zhihu"></i></a>
-                         </li>
-                    </ul>
-               </div>
-          </div>
-     </div>
-     <script>
-          function showQR(){
-               console.log("show Wechat QR")
-          }
-     </script>
+  <header class="site-header">
+    <div class="brand">Loridy</div>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="notes.html">Notes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <img class="avatar" src="assets/profile.jpg" alt="Loridy profile photo" />
+      <div>
+        <h1>Hi, I’m Loridy.</h1>
+        <p class="lead">
+          Building practical AI-enabled systems for research, automation, and decision support.
+          This site is now rebuilt as a clean, maintainable profile website on GitHub Pages.
+        </p>
+        <div class="card">
+          <strong>Focus Areas</strong>
+          <ul class="list">
+            <li>AI-assisted workflow design and operations</li>
+            <li>Market research tooling and recap automation</li>
+            <li>Practical product execution from idea to shipping</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2026 Loridy</footer>
 </body>
 </html>
