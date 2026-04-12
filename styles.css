@@ -206,23 +206,21 @@ nav a.active, nav a:hover { color: var(--text); }
 .note-card h3 { margin: 0 0 4px; font-size: 15px; color: var(--text); }
 .note-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-/* ── Footer ──────────────────────────────────────── */
-.footer {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  color: #8293af; padding: 14px 8vw; font-size: 12px;
+footer {
+  align-self: flex-end;
+  padding: 14px 8vw;
+  font-size: 12px;
   background: rgba(4, 8, 18, 0.5);
   backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: #8293af;
 }
 
-/* ── Responsive ──────────────────────────────────── */
-@media (max-width: 720px) {
-  .hero-card { padding: 36px 28px; }
-  nav a { margin-left: 10px; font-size: 12px; }
-  .stats-row { gap: 24px; }
-  .stat-value { font-size: 26px; }
+/*simple footer push*/
+html,body {
+  height: 100%;
 }
-@media (max-width: 600px) {
-  .tl-item { grid-template-columns: 1fr; }
-  .tl-meta { text-align: left; }
-  .panel { padding: 24px 20px; }
+main {
+  min-height: calc(100vh - 60px); /* Adjust 60px to your footer's actual height */
+  padding-bottom: 60px; /* Same as footer height */
 }
