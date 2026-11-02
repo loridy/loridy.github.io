@@ -27,7 +27,7 @@ const icons={home:'⌂',practice:'◎',errors:'⊗',saved:'☆',library:'☷',an
 let state={stats:{},mistakes:{},stars:{},daily:{},session:null};
 try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY));if(saved&&typeof saved==='object')state={...state,...saved}}catch(e){}
 let route='home',filterSet='all',search='',listPage=0,toastTimer=0,selected='',filters={set:'all',status:'all'};
-function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch(e){toast('浏览器空间不足，请导出备份')}}
+function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));if(window.CFA_SYNC?.schedule)window.CFA_SYNC.schedule()}catch(e){toast('浏览器空间不足，请导出备份')}}
 function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')}
 function fmt(n){return Number(n||0).toLocaleString('zh-CN')}
 function pct(a,b){return b?Math.round(100*a/b):0}
@@ -65,6 +65,8 @@ document.addEventListener('change',e=>{if(e.target.id==='listSet'){filters.set=e
 document.addEventListener('input',e=>{if(e.target.id==='listSearch'){search=e.target.value;listPage=0;const pos=e.target.selectionStart;render();const n=document.getElementById('listSearch');n.focus();n.setSelectionRange(pos,pos)}});
 document.addEventListener('keydown',e=>{if(route!=='quiz'||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)||e.metaKey||e.ctrlKey)return;if(['1','2','3'].includes(e.key)){e.preventDefault();choose(LETTERS[Number(e.key)-1])}else if(e.key==='Enter'){e.preventDefault();const ses=state.session;if(ses.answers[ses.ids[ses.idx]])nextQuestion();else recordAnswer()}});
 render();
-if(location.protocol.startsWith("http") && "serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
+
 </script>
+<script src="cloud-config.js"></script>
+<script>if(window.CFA_CLOUD_CONFIG?.url&&window.CFA_CLOUD_CONFIG?.publishableKey){const js=document.createElement('script');js.src='cloud-sync.js';document.body.appendChild(js)}</script>
 </body></html>
