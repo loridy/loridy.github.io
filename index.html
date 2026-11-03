@@ -1,98 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loridy — Home</title>
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent investment research, cross-asset strategy and applied AI prototyping.">
+  <meta name="color-scheme" content="dark light">
+  <title>Investment Research & Prototypes | Loridy</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{const t=localStorage.getItem("loridy-theme");document.documentElement.dataset.theme=t==="light"||t==="dark"?t:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <script src="theme.js" defer></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
-    <div class="brand">Loridy</div>
-    <nav>
-      <a class="active" href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="notes.html">Notes</a>
-    </nav>
+    <div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark">L/</span> LORIDY <span class="brand-label">RESEARCH LAB</span></a>
+    <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="ideas.html">Investment Ideas</a><a href="projects.html">Prototypes</a><a href="experience.html">About</a></nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-text">Theme</span></button></div>
   </header>
-
-  <main class="home-wrap">
-    <div class="hero-card glass">
-
-      <img class="avatar" src="assets/profile.jpg" alt="Loridy" />
-
-      <h1>Hi, I'm Loridy.</h1>
-
-      <p class="lead">
-        FinTech student at HKU, currently a Financial Analyst Intern at a Hong Kong family office —
-        bridging quantitative finance and software to build tools that actually get used.
-      </p>
-
-      <div class="chip-row">
-        <span class="chip">Python · VBA · JavaScript</span>
-        <span class="chip">Structured Products</span>
-        <span class="chip">Equity Research</span>
-        <span class="chip">HKU · McGill</span>
-      </div>
-
-      <div class="card-divider"></div>
-
-      <div class="stats-row">
-        <div class="stat">
-          <span class="stat-value" data-count="3.74" data-decimals="2">0</span>
-          <span class="stat-label">GPA at HKU</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" data-count="3" data-decimals="0">0</span>
-          <span class="stat-label">Firms interned at</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" data-count="3" data-decimals="0">0</span>
-          <span class="stat-label">Projects shipped</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" data-count="15" data-decimals="0">0</span>
-          <span class="stat-label">Months experience</span>
-        </div>
-      </div>
-
-      <div class="card-divider"></div>
-
-      <div class="link-row">
-        <a href="experience.html">Experience →</a>
-        <a href="projects.html">Projects →</a>
-        <a href="notes.html">Market Notes →</a>
-        <a href="https://www.linkedin.com/in/loridy-luo-012ab021b/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a href="https://github.com/loridy" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="footer">© 2026 Loridy</footer>
-
-  <script>
-    const stats = document.querySelectorAll('.stat-value[data-count]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target   = parseFloat(el.dataset.count);
-        const decimals = parseInt(el.dataset.decimals || '0');
-        const steps = 55, duration = 1100;
-        let step = 0;
-        const iv = setInterval(() => {
-          step++;
-          const eased = 1 - Math.pow(1 - step / steps, 3);
-          el.textContent = (target * eased).toFixed(decimals);
-          if (step >= steps) { el.textContent = target.toFixed(decimals); clearInterval(iv); }
-        }, duration / steps);
-        observer.unobserve(el);
-      });
-    }, { threshold: 0.3 });
-    stats.forEach(el => observer.observe(el));
-  </script>
+  <main id="main" class="shell">
+<section class="hero hero-large">
+  <span class="eyebrow">Independent Research / Applied Systems</span>
+  <h1>Markets are complex.<br>Research should be <span style="color:var(--accent)">testable.</span></h1>
+  <p class="lead">I explore how markets price information, where expectations diverge from reality, and how quantitative methods and software can turn research into repeatable decisions.</p>
+  <div class="hero-meta"><span>Multi-Asset Investment Research</span><span>Quantitative Methods</span><span>AI Product Thinking</span></div>
+</section>
+<section class="section"><div class="section-head"><div><span class="kicker">01 / Research</span><h2>Questions worth testing</h2><p>Hypotheses, methodology, and evidence — including work in progress, clearly distinguished from results.</p></div><a class="link-arrow" href="research.html">All research ↗</a></div>
+  <div class="grid-2">
+    <article class="card"><div class="meta"><strong>RESEARCH DESIGN</strong><span>Equity / Volatility</span></div><a href="articles/timing-the-market.html" class="title-link"><h3>Timing the market under extreme fear</h3></a><p>Does waiting for price confirmation improve risk-adjusted performance versus buying the first volatility spike?</p><div class="card-footer"><span class="tag">VIX</span><span class="tag">Drawdown</span><span class="tag">Event Study</span></div></article>
+    <article class="card"><div class="meta"><strong>RESEARCH DESIGN</strong><span>China Equities / Momentum</span></div><a href="articles/csi300-momentum.html" class="title-link"><h3>Cross-sectional momentum in CSI300</h3></a><p>Rebalance frequency, short-horizon momentum and portfolio drawdown control without look-ahead bias.</p><div class="card-footer"><span class="tag">10D / 20D / 60D</span><span class="tag">Sharpe</span><span class="tag">Turnover</span></div></article>
+  </div>
+</section>
+<section class="section"><div class="section-head"><div><span class="kicker">02 / Built & Building</span><h2>Research into products</h2><p>Selected prototypes: research workflows, market intelligence tools and applied AI.</p></div><a class="link-arrow" href="projects.html">View prototypes ↗</a></div>
+  <div class="feature"><div><div class="meta"><strong>FEATURED PROTOTYPE</strong><span>Market Intelligence</span></div><h2>Multi-dimensional market recap</h2><p>A research-first pipeline that organizes market moves, cross-asset context and source-driven analysis into reusable daily outputs — instead of a feed of headlines.</p><a class="outline-link" href="projects/market-recap.html">Explore case study ↗</a></div><div class="feature-visual" aria-label="Illustrative pipeline diagram"><div class="ok">● RESEARCH PIPELINE / CONCEPTUAL</div><div class="line"></div><div class="muted">01 / Sources & market data</div><div>　　↓ ingest / normalize</div><div class="muted">02 / Fact & claim validation</div><div>　　↓ contextualize / compare</div><div class="ok">03 / Digest · Dashboard · Archive</div></div></div>
+</section>
+<section class="section"><div class="section-head"><div><span class="kicker">Case Study / Public Research</span><h2>From prediction to useful signals</h2><p>My stock-selection ML project focuses on model benchmarks, feature ablation and honest out-of-sample evaluation — not claiming investable alpha from classification metrics.</p></div><a class="link-arrow" href="projects/ml-stock-selection.html">Read methodology ↗</a></div></section>
+<section class="section"><div class="section-head"><div><span class="kicker">03 / Areas of inquiry</span><h2>Research coverage</h2><p>A deliberately broad range of assets and methods, connected by a consistent research discipline.</p></div></div><div class="matrix"><div><b>Equities</b><p>Single-name, sector, momentum, factor signals</p></div><div><b>FICC & Macro</b><p>Rates, FX, volatility, cross-asset transmission</p></div><div><b>Systematic Strategies</b><p>Backtests, regime analysis, robustness</p></div><div><b>AI & Product</b><p>Research agents, data pipelines, evaluation</p></div></div></section>
+</main>
+  <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Loridy · Independent research & prototyping</span><span>Personal work. Not investment advice. <a href="https://github.com/loridy" rel="noopener noreferrer" target="_blank">GitHub ↗</a></span></div></footer>
 </body>
 </html>
