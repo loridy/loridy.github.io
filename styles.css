@@ -18,3 +18,6 @@ main{flex:1;padding-top:54px;padding-bottom:88px}.eyebrow,.kicker{color:var(--ac
 @media(max-width:940px){.header-inner{flex-wrap:wrap;gap:8px;padding:14px 0}nav{order:3;width:100%;justify-content:flex-start;overflow-x:auto;gap:18px;padding:8px 0}.theme-toggle{margin-left:auto}.feature{grid-template-columns:1fr}.matrix{grid-template-columns:repeat(2,1fr)}.idea-flow{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.shell{width:min(100% - 32px,1120px)}main{padding-top:20px;padding-bottom:50px}.brand-label{display:none}.hero{padding-bottom:38px}.hero-large{min-height:360px}.section{margin-top:42px}.grid-2,.grid-3{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.feature,.card{padding:20px}.matrix{grid-template-columns:1fr 1fr}.idea-flow{grid-template-columns:1fr 1fr}.theme-text{display:none}.theme-toggle{padding:8px 11px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.process-list{display:grid;gap:12px;margin:24px 0}.process-list>div{padding:16px 19px;border:1px solid var(--line);background:var(--surface);border-radius:10px}
+.process-list b{font:700 13px ui-monospace,Consolas,monospace;color:var(--accent)}.process-list p{margin:5px 0 0}.section-footnote{color:var(--faint);font-size:13px;margin:19px 0}.card>.link-arrow{margin-top:10px;align-self:flex-start}
