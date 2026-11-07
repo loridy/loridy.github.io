@@ -39,6 +39,6 @@ Official guidance: https://docs.github.com/en/pages/configuring-a-custom-domain-
 `notes.html` remains as a legacy landing page. It deliberately does not redirect automatically, to avoid surprising bookmarked visitors. `content/notes.json` contains no placeholder entries. `notes.js` no longer renders unsafe HTML from untrusted metadata. Existing archival and CFA Sprint files remain on disk.
 
 ## Editorial update (2026-11-03)
-Three evidence-based case study pages were added under `projects/`, sourced from the publicly accessible Market Recap and HKU-FYP documentation. The AI Research Workbench is explicitly labeled as a product concept rather than shipped software. `research.html` distinguishes existing methodological content from an unverified multi-asset research agenda.
+The Market Recap case study is sourced from its public repository. The AI Research Workbench is explicitly labeled as a product concept rather than shipped software. ML material has been intentionally removed from the public site pending later editorial selection. `research.html` distinguishes existing methodological content from an unverified multi-asset research agenda.
 
 The existing CFA Sprint application is retained at its original URL, but is excluded from featured work pending confirmation of distribution rights for the published question bank. A removed homepage link does not remove public access to the underlying quiz.
