@@ -21,3 +21,53 @@ main{flex:1;padding-top:54px;padding-bottom:88px}.eyebrow,.kicker{color:var(--ac
 
 .process-list{display:grid;gap:12px;margin:24px 0}.process-list>div{padding:16px 19px;border:1px solid var(--line);background:var(--surface);border-radius:10px}
 .process-list b{font:700 13px ui-monospace,Consolas,monospace;color:var(--accent)}.process-list p{margin:5px 0 0}.section-footnote{color:var(--faint);font-size:13px;margin:19px 0}.card>.link-arrow{margin-top:10px;align-self:flex-start}
+
+/* Narrow-screen header: keep all five sections accessible without clipping. */
+@media (max-width: 740px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 12px;
+    padding: 12px 0;
+    min-height: 0;
+  }
+  .brand { grid-column: 1; grid-row: 1; min-width: 0; }
+  .theme-toggle { grid-column: 2; grid-row: 1; margin-left: 0; }
+  .site-header nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 6px;
+    order: initial;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    overflow: visible;
+  }
+  .site-header nav a {
+    display: flex;
+    min-width: 0;
+    min-height: 37px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 4px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.22;
+    text-align: center;
+    white-space: normal;
+  }
+  .site-header nav a[aria-current="page"] {
+    background: var(--accent-deep);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}

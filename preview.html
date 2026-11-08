@@ -22,10 +22,60 @@ main{flex:1;padding-top:54px;padding-bottom:88px}.eyebrow,.kicker{color:var(--ac
 .process-list{display:grid;gap:12px;margin:24px 0}.process-list>div{padding:16px 19px;border:1px solid var(--line);background:var(--surface);border-radius:10px}
 .process-list b{font:700 13px ui-monospace,Consolas,monospace;color:var(--accent)}.process-list p{margin:5px 0 0}.section-footnote{color:var(--faint);font-size:13px;margin:19px 0}.card>.link-arrow{margin-top:10px;align-self:flex-start}
 
-[hidden]{display:none!important}.preview-banner{background:var(--accent-deep);border-bottom:1px solid var(--accent);padding:8px 20px;text-align:center;color:var(--text);font-size:12px;font-weight:650}.preview-page{min-height:60vh}.preview-page .article{margin-left:auto;margin-right:auto}.preview-page section{scroll-margin-top:130px}</style><script>try{const t=localStorage.getItem("loridy-preview-theme");document.documentElement.dataset.theme=t==="light"||t==="dark"?t:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){document.documentElement.dataset.theme="dark"}</script></head><body>
+[hidden]{display:none!important}.preview-banner{background:var(--accent-deep);border-bottom:1px solid var(--accent);padding:8px 20px;text-align:center;color:var(--text);font-size:12px;font-weight:650}.preview-page{min-height:60vh}.preview-page .article{margin-left:auto;margin-right:auto}.preview-page section{scroll-margin-top:130px}
+/* Narrow-screen header: keep all five sections accessible without clipping. */
+@media (max-width: 740px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 12px;
+    padding: 12px 0;
+    min-height: 0;
+  }
+  .brand { grid-column: 1; grid-row: 1; min-width: 0; }
+  .theme-toggle { grid-column: 2; grid-row: 1; margin-left: 0; }
+  .site-header nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 6px;
+    order: initial;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    overflow: visible;
+  }
+  .site-header nav a {
+    display: flex;
+    min-width: 0;
+    min-height: 37px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 4px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.22;
+    text-align: center;
+    white-space: normal;
+  }
+  .site-header nav a[aria-current="page"] {
+    background: var(--accent-deep);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+</style><script>try{const t=localStorage.getItem("loridy-preview-theme");document.documentElement.dataset.theme=t==="light"||t==="dark"?t:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){document.documentElement.dataset.theme="dark"}</script></head><body>
 <div class="preview-banner">V2 REVIEW PREVIEW · Not the live website · ML content excluded</div>
 <a href="#main" class="skip-link">Skip to content</a>
-<header class="site-header"><div class="shell header-inner"><a class="brand" href="#home"><span class="brand-mark">L/</span> LORIDY <span class="brand-label">RESEARCH LAB</span></a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="#home">LORIDY <span class="brand-label">RESEARCH LAB</span></a>
 <nav aria-label="Main navigation"><a href="#home" data-nav="home">Home</a><a href="#research" data-nav="research">Research</a><a href="#ideas" data-nav="ideas">Investment Ideas</a><a href="#prototypes" data-nav="prototypes">Prototypes</a><a href="#about" data-nav="about">About</a></nav>
 <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><span class="theme-icon">◐</span><span class="theme-text">Theme</span></button></div></header>
 <main class="shell" id="main"><div class="preview-page" id="preview-home" data-view="home">
@@ -74,16 +124,19 @@ main{flex:1;padding-top:54px;padding-bottom:88px}.eyebrow,.kicker{color:var(--ac
 </div>
 <div class="preview-page" id="preview-about" data-view="about" hidden>
 <section class="page-hero"><span class="eyebrow">About</span><h1>Finance, research, and software.</h1><p class="lead">My work sits at the intersection of investment analysis, quantitative research and practical software. I care about identifying what a market is pricing — and testing a hypothesis before treating it as an edge.</p></section>
-<section class="section"><div class="group-title"><h2>Experience</h2><span>SELECTED ROLES</span></div><div class="timeline">
-<div class="timeline-item"><div class="meta"><span>Jan 2025 – Present</span><span>Hong Kong</span></div><h3>Poseidon Partners Global Family Office</h3><p>Multi-asset investment research across equities, FX, fixed income, structured products and alternative strategies; research workflow and monitoring automation.</p></div>
-<div class="timeline-item"><div class="meta"><span>Sep – Dec 2024</span><span>Shanghai</span></div><h3>China International Capital Corporation (CICC)</h3><p>Equity research internship focused on consumer companies, financial model maintenance and earnings reviews.</p></div>
-<div class="timeline-item"><div class="meta"><span>Jun – Aug 2024</span><span>Hong Kong</span></div><h3>Hong Kong Monetary Authority (HKMA)</h3><p>Credit risk summer internship, financial data analysis and risk monitoring.</p></div>
-<div class="timeline-item"><div class="meta"><span>Apr – Sep 2023</span><span>Hong Kong</span></div><h3>HKU Business School</h3><p>Student research assistant working on market research and software-based experimentation.</p></div>
+<section class="section"><div class="group-title"><h2>Experience</h2><span>SELECTED EXPERIENCE</span></div><div class="timeline">
+<div class="timeline-item">
+<h3>Poseidon Capital Limited</h3>
+<p>Bottom-up investment analysis of listed companies, with a focus on fundamental drivers, market expectations and differentiated investment theses. Industry and value-chain research across AI infrastructure, including hyperscaler capital expenditure, compute, power and related supply chains. Developing AI-agent-assisted research pipelines to organize market intelligence, evaluate sources and streamline the investment research workflow.</p>
+</div>
+<div class="timeline-item">
+<h3>China International Capital Corporation (CICC)</h3>
+<p>Equity research focused on consumer companies, financial model maintenance and earnings reviews.</p>
+</div>
 </div></section>
-<section class="section"><div class="group-title"><h2>Education</h2><span>ACADEMIC BACKGROUND</span></div><div class="timeline">
-<div class="timeline-item"><div class="meta"><span>2021 – 2026</span><span>Hong Kong</span></div><h3>The University of Hong Kong</h3><p>BASc Financial Technology · Minor in Computer Science and Finance</p></div>
-<div class="timeline-item"><div class="meta"><span>2024</span><span>Canada</span></div><h3>McGill University</h3><p>Exchange programme</p></div>
-</div></section>
+<section class="section"><div class="group-title"><h2>Education</h2><span>ACADEMIC BACKGROUND</span></div>
+<div class="timeline"><div class="timeline-item"><h3>The University of Hong Kong</h3><p>BASc Financial Technology · Minor in Computer Science and Finance</p></div></div>
+</section>
 <section class="section"><div class="section-head"><div><h2>Connect</h2><p>For professional exchange, research collaboration, or discussions about investment systems.</p></div></div><a class="outline-link" href="https://www.linkedin.com/in/loridy-luo-012ab021b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> <a class="outline-link" href="https://github.com/loridy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></section>
 </div>
 <div class="preview-page" id="preview-timing" data-view="timing" hidden><article class="article"><header class="article-header"><a class="back" href="#research">← Back to Research</a><div class="meta" style="margin-top:32px"><strong>RESEARCH DESIGN</strong><span>US Equities / Volatility</span><span>Updated: 2026-11-03</span></div><h1>Timing Equity Exposure under Extreme Fear</h1><p class="lead">A research protocol comparing first-spike entry, staged buying and trend-confirmed buying after equity-market stress.</p></header><aside><strong>Publication status:</strong> This is a research protocol, not completed empirical analysis. No model returns, statistical significance, or investment performance is asserted. It does not constitute investment advice.</aside>
